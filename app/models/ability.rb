@@ -9,7 +9,7 @@ class Ability
     #  user ||= User.new # guest user (not logged in)
 
     can :read, Recipe, public: true
-    can :read, Comments, public: true
+    # can :read, Comments, public: true
 
     if user.present?
       if user.is_admin?
@@ -17,7 +17,7 @@ class Ability
       end
 
       if user.is_moderator?
-        can :manage, [:comments, :recipes]
+        can :manage, [:recipes] #:comments,
       end
 
       # Standard user access
