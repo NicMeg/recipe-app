@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
   # Test moderator
   User.create(
-    username: Faker::Name.middle_name
-    email: 'admin@test.com'
-    password: "123456"
-    is_admin: true
+    username: Faker::Name.middle_name,
+    email: 'admin@test.com',
+    password: "123456",
+    is_admin: true,
     is_moderator: false
   )
 # Test admin
