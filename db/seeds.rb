@@ -30,7 +30,7 @@ User.create(
     password: '123456'
   )
   5.times do
-    user.recipes.new(
+    user.recipes.create(
       title: Faker::Food.dish,
       summary: Faker::Food.description,
       published: true
