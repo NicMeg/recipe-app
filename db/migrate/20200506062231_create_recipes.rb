@@ -6,7 +6,7 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.text :method
       t.text :body
       t.boolean :published
-      t.references :user_id
+      t.references :user
 
       t.timestamps
     end
