@@ -3,18 +3,17 @@
 <h1>Recipe Web</h1>
 <div class= "container" >
   <% @recipes.each do |recipe| %>
-    <% if recipe.published %>
       <div class= "col-sm card" >
         <div class= "card-title"><%= link_to recipe.title, recipe %></div>
         <div class= "card-text"><%= recipe.summary %></div>
         <% if can? :edit, recipe %>
           <%= link_to 'Edit', edit_recipe_path(recipe), class: 'btn btn-success' %>
+          <%= link_to 'Publish', edit_recipe_path(recipe), class: 'btn btn-success' %>
         <% end %>
         <% if can? :destroy, recipe %>
           <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
         <% end %>
       </div>
-    <% end %>
   <% end %>
 </div>
 
