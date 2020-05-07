@@ -1,25 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Recipe Web</h1>
+<h1>My Recipes</h1>
 <div class= "container" >
-<%= link_to 'New Recipe', new_recipe_path %>
-
-  <% @recipes.each do |recipe| %>
-  
-      <div class= "col-sm card" >
-        <div class= "card-title"><%= link_to recipe.title, recipe %></div>
-        <div class= "card-text"><%= recipe.summary %></div>
-        <% if can? :edit, recipe %>
-          <%= link_to 'Edit', edit_recipe_path(recipe), class: 'btn btn-success' %>
-          
-        <% end %>
-        <% if can? :destroy, recipe %>
-          <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-        <% end %>
-      </div>
-  <% end %>
-  
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Summary</th>
+        <th scope="col">Published</th>
+        <th scope="col" colspan='3'><%= link_to 'New Recipe', new_recipe_path %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipes.each do |recipe| %>
+        <tr>
+          <th scope="row"><%= link_to recipe.title, recipe %></th>
+          <td><%= recipe.summary %></td>
+          <td><%= recipe.published %></td>
+          <% if can? :edit, recipe %>
+            <td><%= link_to 'Edit', edit_recipe_path(recipe), class: 'btn btn-success' %></td>
+          <% end %>
+          <% if can? :destroy, recipe %>
+            <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-
-<br>
-
