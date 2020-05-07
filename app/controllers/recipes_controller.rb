@@ -52,7 +52,7 @@ class RecipesController < ApplicationController
   end
 
   def my_recipes
-  current_user.recipes
+    current_user.recipes
   end
 
   # DELETE /recipes/1
