@@ -51,6 +51,10 @@ class RecipesController < ApplicationController
     end
   end
 
+  def my_recipes
+  current_user.recipes
+  end
+
   # DELETE /recipes/1
   # DELETE /recipes/1.json
   def destroy
