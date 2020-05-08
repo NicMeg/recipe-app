@@ -10,24 +10,26 @@
       <li class="nav-item active">
         <%= link_to 'Recipes', recipes_path, class: "nav-link" %>
       </li>
+       <% if user_signed_in?%>
       <li class="nav-item">
         <%= link_to 'My Recipes', my_recipes_path, class: "nav-link" %>
-      </li>
-       <li class="nav-item">
-        <%= link_to 'Saved Recipes', my_recipes_path, class: "nav-link" %>
       </li>
        <li class="nav-item">
         <%= link_to 'My Account', edit_user_registration_path, class: "nav-link" %>
       </li>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
+     <% end%>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      <li class="nav-item">
+<%= form_tag(search_recipes_path, :method => "get",   
+    class: 'navbar-form navbar-left') do %>  
+  <div class="input-group">  
+    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+    <div class="input-group-btn">  
+      <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+    </div>  
+  </div>  
+<% end %>
+
         <% if user_signed_in?%>
           <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "nav-link" %>
         <%else%>
