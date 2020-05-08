@@ -1,38 +1,4 @@
-
-<h3>Search Result</h3>  
-    <% @results.each do |result| %>  
-        <%= result.title %><br>  
-        <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= result.title %>
-  
-</p>
-
-<p>
-  <strong>Summary:</strong>
-  <%= result.summary %>
-</p>
-
-<p>
-  <strong>Method:</strong>
-  <%= result.method %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= result.body %>
-</p>
-
-<p>
-  <strong>Published:</strong>
-  <%= result.published %>
-</p>
-
-    <% end %>
-
-
-    
-
-
+<div class="title-container">
+<h1>Search Results</h1>
+</div>
+<%= render 'recipe_cards' %>
