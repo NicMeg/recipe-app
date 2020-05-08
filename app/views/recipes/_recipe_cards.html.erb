@@ -11,15 +11,11 @@
             <%# <% else %>
               <%#= link_to '', recipe, class: 'glyphicon glyphicon-star-empty' %>
             <%# <% end %>
-            <img src="https://picsum.photos/200" class="card-img-top" alt="Food is good">
-            <div class= "buttons">
-              <% if can? :edit, recipe %>
-                <%= link_to 'Edit', edit_recipe_path(recipe), class: 'btn btn-success' %>
-              <% end %>
-              <% if can? :destroy, recipe %>
-                <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-              <% end %>
-            </div>
+            <% if recipe.picture.attached? %>
+              <%= image_tag recipe.picture if recipe.picture.attached? %>
+            <% else %>
+              <img src="https://picsum.photos/200" class="card-img-top" alt="Food is good">
+            <% end %>
           </div>
         </div>
       </div>
