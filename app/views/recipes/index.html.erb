@@ -25,17 +25,6 @@
             <% else %>
               <img src="https://picsum.photos/200" class="card-img-top" alt="Food is good">
             <% end %>
-
-            <div class="btn-container">
-              <div class= "buttons">
-                <% if can? :edit, recipe %>
-                  <%= link_to 'Edit', edit_recipe_path(recipe), class: 'btn btn-success' %>
-                <% end %>
-                <% if can? :destroy, recipe %>
-                  <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-                <% end %>
-              </div>
-            </div>
           </div>
         </div>
       </div>
