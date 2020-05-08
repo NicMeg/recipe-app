@@ -1,10 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <%= link_to 'Eats Good', recipes_path, class: "navbar-brand" %>
-
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -17,25 +15,22 @@
        <li class="nav-item">
         <%= link_to 'My Account', edit_user_registration_path, class: "nav-link" %>
       </li>
-      </li>
      <% end%>
     </ul>
-<%= form_tag(search_recipes_path, :method => "get",   
-    class: 'navbar-form navbar-left') do %>  
-  <div class="input-group">  
-    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
-    <div class="input-group-btn">  
-      <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
-    </div>  
-  </div>  
-<% end %>
-
+    <%= form_tag(search_recipes_path, method: :get,
+        class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :search, params[:search], placeholder: 'Search', class: 'form-control' %>
+        <div class="input-group-append">
+          <%= button_tag '', class: 'btn btn-outline-info search', type: 'button', name: nil %>
+        </div>
+      </div>
+    <% end %>
         <% if user_signed_in?%>
           <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "nav-link" %>
         <%else%>
           <%= link_to 'Sign in', new_user_session_path, class: "nav-link" %>
         <%end%>
-      </li>
     </form>
   </div>
 </nav>
