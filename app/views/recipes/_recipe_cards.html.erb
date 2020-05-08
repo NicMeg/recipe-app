@@ -12,7 +12,7 @@
               <%#= link_to '', recipe, class: 'glyphicon glyphicon-star-empty' %>
             <%# <% end %>
             <% if recipe.picture.attached? %>
-              <%= image_tag recipe.picture if recipe.picture.attached? %>
+              <%= (image_tag recipe.picture(resize: "300x300"), size: '300')  if recipe.picture.attached? %>
             <% else %>
               <img src="https://picsum.photos/200" class="card-img-top" alt="Food is good">
             <% end %>
