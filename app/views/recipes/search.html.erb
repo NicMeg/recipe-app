@@ -1,15 +1,8 @@
 
 <h3>Search Result</h3>  
     <% @results.each do |result| %>  
-        <%= result.title %><br>  
         <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= result.title %>
-  
-</p>
-
+<h3><%= link_to truncate(result.title), result %></h3>
 <p>
   <strong>Summary:</strong>
   <%= result.summary %>
@@ -29,7 +22,6 @@
   <strong>Published:</strong>
   <%= result.published %>
 </p>
-
     <% end %>
 
 
