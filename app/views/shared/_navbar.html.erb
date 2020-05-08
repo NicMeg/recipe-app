@@ -15,17 +15,11 @@
         <%= link_to 'My Recipes', my_recipes_path, class: "nav-link" %>
       </li>
        <li class="nav-item">
-        <%= link_to 'Saved Recipes', my_recipes_path, class: "nav-link" %>
-      </li>
-       <li class="nav-item">
         <%= link_to 'My Account', edit_user_registration_path, class: "nav-link" %>
       </li>
       </li>
      <% end%>
     </ul>
-
-
- 
 <%= form_tag(search_recipes_path, :method => "get",   
     class: 'navbar-form navbar-left') do %>  
   <div class="input-group">  
