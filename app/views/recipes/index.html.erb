@@ -7,27 +7,4 @@
 </div>
 <p id="notice"><%= notice %></p>
 
-<div class= "recipes" >
-  <% @recipes.each do |recipe| %>
-    <% if recipe.published %>
-      <div class= "recipe">
-        <div class= "thumbnail">
-          <div class="caption">
-            <h3><%= link_to truncate(recipe.title), recipe %></h3>
-            <p><%= truncate(recipe.summary, length: 150) %></p>
-            <%# <% if is_favourite? %>
-              <%#= link_to '', recipe, class: 'glyphicon glyphicon-star' %>
-            <%# <% else %>
-              <%#= link_to '', recipe, class: 'glyphicon glyphicon-star-empty' %>
-            <%# <% end %>
-            <% if recipe.picture.attached? %>
-              <%= image_tag recipe.picture if recipe.picture.attached? %>
-            <% else %>
-              <img src="https://picsum.photos/200" class="card-img-top" alt="Food is good">
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
+<%= render 'recipe_cards' %>
