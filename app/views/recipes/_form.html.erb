@@ -36,8 +36,12 @@
     <%= form.check_box :published %>
   </div>
 
+  <% if recipe.picture.attached? %>
+    <%= (image_tag recipe.picture(resize: "250x300"), size: '100') if recipe.picture.attached? %>
+  <% end %>
+
   <div>
-  <%= form.label :picture %> 
+  <%= form.label :picture %>
   <%= form.file_field :picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
   </div>
 
