@@ -49,13 +49,13 @@ class RecipesController < ApplicationController
     redirect_to recipes_url, notice: 'Recipe was successfully destroyed.'
   end
 
-  def search  
-    if params[:search].blank?  
-      redirect_to(root_path, alert: "Empty field!")  
-    else  
-      @parameter = params[:search].downcase  
-      @results = Recipe.all.where("lower(title) LIKE :search", search: "%#{@parameter}%")  
-    end  
+  def search
+    if params[:search].blank?
+      redirect_to(root_path, alert: "Empty field!")
+    else
+      @parameter = params[:search].downcase
+      @recipes = Recipe.all.where("lower(title) LIKE :search", search: "%#{@parameter}%")
+    end
   end
 
   private
