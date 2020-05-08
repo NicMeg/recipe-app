@@ -1,48 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## EATS GOOD
 
-Things you may want to cover:
+Eats good is an exciting and fun recipe sharing web app that allows users to browse and search for tasty recipes. Users who sign up and log in are able to create, edit and manage their recipes and manage their account.
 
-* Ruby version
+## The Project
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-Some setup you must do manually if you haven't yet:
-
-  1. Ensure you have defined default url options in your environments files. Here
-     is an example of default_url_options appropriate for a development environment
-     in config/environments/development.rb:
-
-       config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
-     In production, :host should be set to the actual host of your application.
-
-  2. Ensure you have defined root_url to *something* in your config/routes.rb.
-     For example:
-
-       root to: "home#index"
-
-  3. Ensure you have flash messages in app/views/layouts/application.html.erb.
-     For example:
-
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-
-  4. You can copy Devise views (for customization) to your app by running:
-
-       rails g devise:views
-
-* ...
+EATS GOOD was built in 3 days as part of a hackathon challenge where we utilised Git and Github source control tools to work collaboriatively (but safely) on our app. EATS GOOD is a Ruby on Rails web app deployed with Heroku. We utilised AWS to handle our images.
