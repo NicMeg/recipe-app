@@ -14,7 +14,7 @@
     }
 }
 .thumbnail {
-    height: 100%;;
+    height: 100%;
 }
 
 .caption {
@@ -32,9 +32,15 @@
     }
     img {
         flex-grow: 0;
+        max-height: 250px;
+        object-fit: cover;
+    }
+
+    .btn-container{
+        height: 75px;
     }
     .buttons {
-        flex-grow: 0;
+        // flex-grow: 0;
         display: flex;
         justify-content: space-around;
         align-items: center;
