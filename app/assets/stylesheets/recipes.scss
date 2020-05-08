@@ -33,6 +33,7 @@
     img {
         flex-grow: 0;
         max-height: 250px;
+        max-width: 100%;
         object-fit: cover;
         border-radius: 5px;
     }
@@ -45,4 +46,10 @@
     padding: 0.8em;
     border: 1px solid grey;
     border-radius: 5px;
+}
+
+// Show image
+.show-page-image {
+    max-width: 100vw;
+    max-height: 50vh;
 }

@@ -10,10 +10,18 @@
   <%= @recipe.summary %>
 </p>
 
-<% if recipe.picture.attached? %>
-  <%= image_tag recipe.picture if recipe.picture.attached? %>
+
+<% if @recipe.picture.attached? %>
+  <%= (image_tag @recipe.picture, class:'show-page-image') if @recipe.picture.attached? %>
 <% else %>
-  <img src="https://unsplash.com/photos/NXHwphKj1Yc?force=true&w=640" class="card-img-top" alt="Missing picture">
+  <figure>
+    <img src="https://images.unsplash.com/photo-1588503812457-f289d7f27314?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" class='show-page-image' alt="Image missing">
+  <% if @recipe.user_id == current_user.id %>
+    <figcaption>Don't eat it all before you take a picture next time 🙅🏻</figcaption>
+  <% else %>
+    <figcaption>Oh, It looks like they ate it all before taking a picture 🤦🏽‍♀️</figcaption>
+  <% end %>
+  </figure>
 <% end %>
 
 <p>
@@ -32,7 +40,7 @@
 </p>
 
 
-<% if can? :edit, recipe %>
+<% if can? :edit, @recipe %>
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <% end %>
 <%= link_to 'Back', recipes_path %>

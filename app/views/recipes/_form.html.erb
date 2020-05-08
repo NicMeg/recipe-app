@@ -36,7 +36,7 @@
   </div>
 
   <% if recipe.picture.attached? %>
-    <%= (image_tag recipe.picture(resize: "250x300"), size: '100') if recipe.picture.attached? %>
+    <%= (image_tag recipe.picture, size: '300') if recipe.picture.attached? %>
   <% end %>
   <div>
   <%= form.label :picture %>
