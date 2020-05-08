@@ -4,21 +4,20 @@
     <title>RecipeApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-
   <body>
-    <header class="container">
       <%= render 'shared/navbar' %>
-    </header>
 
-    <main class="container">
+    <main class="container-fluid">
           <%= yield %>
     </main>
 
-    <%= render partial: "layouts/footer" %>
+    <footer>
+      <%= render partial: "layouts/footer" %>
+    </footer>
   </body>
 </html>

@@ -16,19 +16,19 @@
             <h3><%= link_to truncate(recipe.title), recipe %></h3>
             <p><%= truncate(recipe.summary, length: 150) %></p>
             <%# <% if is_favourite? %>
-              <%# <%= link_to recipe, class: 'glyphicon glyphicon-star' %>
+              <%#= link_to '', recipe, class: 'glyphicon glyphicon-star' %>
             <%# <% else %>
-              <%# <%= link_to recipe, class: 'glyphicon glyphicon-star-empty' %>
+              <%#= link_to '', recipe, class: 'glyphicon glyphicon-star-empty' %>
             <%# <% end %>
             <img src="https://picsum.photos/200" class="card-img-top" alt="Food is good">
-            <p>
+            <div class= "buttons">
               <% if can? :edit, recipe %>
                 <%= link_to 'Edit', edit_recipe_path(recipe), class: 'btn btn-success' %>
               <% end %>
               <% if can? :destroy, recipe %>
                 <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
               <% end %>
-            </p>
+            </div>
           </div>
         </div>
       </div>
