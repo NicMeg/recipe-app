@@ -49,6 +49,15 @@ class RecipesController < ApplicationController
     redirect_to recipes_url, notice: 'Recipe was successfully destroyed.'
   end
 
+  def search  
+    if params[:search].blank?  
+      redirect_to(root_path, alert: "Empty field!") and return  
+    else  
+      @parameter = params[:search].downcase  
+      @results = Recipe.all.where("lower(title) LIKE :search", search: @parameter)  
+    end  
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
