@@ -1,7 +1,9 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-@import "bootstrap-sprockets";
-@import "bootstrap";
+// *= require bootstrap
+// *= require_tree .
+// *= require_self
 @import "colors";
+@import "recipes";
 
 .title-container {
     display: flex;
@@ -14,22 +16,10 @@
     }
 }
 
-.recipes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-
-    h3 a {
-        text-decoration: none;
-        color: $primary-color;
-    }
-}
-
-.recipe {
-    width: 30%;
-    min-width: 200px;
-}
-
 li {float: left;
     list-style-type:none;
     }
+
+footer {
+    text-align: center;
+}
