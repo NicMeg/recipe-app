@@ -9,7 +9,11 @@
   <strong>Summary:</strong>
   <%= @recipe.summary %>
 </p>
-
+<% if recipe.picture.attached? %>
+  <%= image_tag recipe.picture if recipe.picture.attached? %>
+<% else %>
+  <img src="https://unsplash.com/photos/NXHwphKj1Yc?force=true&w=640" class="card-img-top" alt="Missing picture">
+<% end %>
 <p>
   <strong>Method:</strong>
   <%= @recipe.method %>
@@ -26,6 +30,7 @@
 </p>
 
 
-
+<% if can? :edit, recipe %>
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<% end %>
 <%= link_to 'Back', recipes_path %>
