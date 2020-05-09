@@ -38,6 +38,7 @@
   <% if recipe.picture.attached? %>
     <%= (image_tag recipe.picture, size: '300') if recipe.picture.attached? %>
   <% end %>
+
   <div>
   <%= form.label :picture %>
   <%= form.file_field :picture, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>

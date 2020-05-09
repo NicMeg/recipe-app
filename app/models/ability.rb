@@ -6,18 +6,17 @@ class Ability
   def initialize(user)
     # Define abilities for the passed in user here. For example:
     #
-    #  user ||= User.new # guest user (not logged in)
-
     can :read, Recipe, public: true
     # can :read, Comments, public: true
 
+    user ||= User.new # guest user (not logged in)
     if user.present?
       if user.is_admin?
         can :manage, :all
       end
 
       if user.is_moderator?
-        can :manage, [:recipes] #:comments,
+        can :manage, Recipe #:comments, :
       end
 
       # Standard user access
