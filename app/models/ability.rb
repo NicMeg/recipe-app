@@ -6,7 +6,6 @@ class Ability
   def initialize(user)
     # Define abilities for the passed in user here. For example:
     #
-
     can :read, Recipe, public: true
     # can :read, Comments, public: true
 
@@ -17,7 +16,7 @@ class Ability
       end
 
       if user.is_moderator?
-        can :manage, [:recipes] #:comments,
+        can :manage, Recipe #:comments, :
       end
 
       # Standard user access
