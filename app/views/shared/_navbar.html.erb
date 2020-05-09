@@ -8,13 +8,18 @@
       <li class="nav-item active">
         <%= link_to 'Recipes', recipes_path, class: "nav-link" %>
       </li>
-       <% if user_signed_in?%>
+       <% if user_signed_in? %>
       <li class="nav-item">
         <%= link_to 'My Recipes', my_recipes_path, class: "nav-link" %>
       </li>
        <li class="nav-item">
         <%= link_to 'My Account', edit_user_registration_path, class: "nav-link" %>
       </li>
+      <% if can? :manage, :all %>
+        <li class="nav-item">
+          <%= link_to 'User Admin', users_path, class: "nav-link" %>
+        </li>
+      <% end %>
      <% end%>
     </ul>
     <%= form_tag(search_recipes_path, method: :get,
