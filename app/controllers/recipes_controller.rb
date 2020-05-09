@@ -51,21 +51,21 @@ class RecipesController < ApplicationController
 
   def search
     if params[:search].blank?
-      redirect_to(root_path, alert: "Empty field!")
+      redirect_to(root_path, alert: 'Empty field!')
     else
       @parameter = params[:search].downcase
-      @recipes = Recipe.all.where("lower(title) LIKE :search", search: "%#{@parameter}%")
+      @recipes = Recipe.all.where('lower(title) LIKE :search', search: "%#{@parameter}%")
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_recipe
-      @recipe = Recipe.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def recipe_params
-      params.require(:recipe).permit(:title, :summary, :method, :body, :published, :picture)
-    end
+  # Only allow a list of trusted parameters through.
+  def recipe_params
+    params.require(:recipe).permit(:title, :summary, :method, :body, :published, :picture)
+  end
 end
