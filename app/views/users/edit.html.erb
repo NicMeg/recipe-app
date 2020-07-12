@@ -1,40 +1,5 @@
-<%= form_with(model: @user, local: true) do |form| %>
 <div class="container-fluid">
-  <h1>Editing user.name</h1>
+  <h1>Editing <%= @user.username %></h1>
+  <%= render 'form', user: @user %>
+  <%= link_to 'Back', :back %>
 </div>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= form.label :username %>
-    <%= form.text_field :username, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :email %>
-    <%= form.text_field :email, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :is_admin %>
-    <%= form.check_box :is_admin %>
-  </div>
-
-  <div class="field">
-    <%= form.label :is_moderator %>
-    <%= form.check_box :is_moderator %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit 'Save', class: 'btn btn-success' %>
-  </div>
-<% end %>
-<%= link_to 'Cancel', :back %>
