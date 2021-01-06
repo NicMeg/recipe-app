@@ -20,9 +20,9 @@ class Ability
       end
 
       # Standard user access
-      can :create, Recipe
-      can [:edit, :update, :destroy], Recipe, user_id: user.id
-      can [:edit, :update, :destroy], User, user_id: user.id
+      can [:new, :create], Recipe
+      can [:edit, :update, :my_recipes, :destroy], Recipe, user_id: user.id
+      # can [:edit, :update, :destroy], User, user: user
     end
     #
     # The first argument to `can` is the action you are giving the user

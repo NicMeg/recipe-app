@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  load_and_authorize_resource only: [:new, :edit, :create, :my_recipes, :update, :destroy]
+
   # GET /recipes
   def index
     @recipes = Recipe.all

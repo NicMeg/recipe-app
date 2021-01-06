@@ -10,7 +10,6 @@
   <%= @recipe.summary %>
 </p>
 
-
 <% if @recipe.picture.attached? %>
   <%= (image_tag @recipe.picture, class:'show-page-image') if @recipe.picture.attached? %>
 <% else %>
@@ -25,20 +24,14 @@
 <% end %>
 
 <p>
-  <strong>Method:</strong>
-  <%= @recipe.method %>
-</p>
-
-<p>
   <strong>Body:</strong>
   <%= @recipe.body %>
 </p>
 
 <p>
-  <strong>Published:</strong>
-  <%= @recipe.published %>
+  <strong>Method:</strong>
+  <%= @recipe.method %>
 </p>
-
 
 <% if can? :edit, @recipe %>
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
